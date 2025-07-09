@@ -11,22 +11,22 @@ const getBookInfo = function () {
     .then(function (library) {
       library.forEach(function (book) {
         const bookCard = document.getElementById(`book-Card`)
-        bookCard.innerHTML += `<div id="book-Card" class="col col-sm-12 col-md-6 col-lg-3 border">
-            <div class="p-3 d-flex flex-column">
-              <img id="book-Cover" class="w-100" src="${book.img}" alt="" />
-               <div class="flex-grow-1">
-                  <h2 class="fs-4">
-                    Title:
-                    <span id="book-Title" class="fst-italic">${book.title}</span>
-                  </h2>
-                  <p class="fs-5">
-                    Price:
-                    <span id="book-Price" class="fst-italic">${book.price}</span> €
-                  </p>
-                <button id="delete-Button" type="button" class="btn btn-danger">Delete</button>
-              </div>
+        bookCard.innerHTML += `
+        <div class="col col-sm-12 col-md-6 col-lg-3">
+          <div class="card h-100 rounded-4 overflow-hidden shadow d-flex">
+            <div>
+            <img id="book-Cover" class="w-100" src="${book.img}" alt="" >
             </div>
-          </div>`
+            <div class="card-body">
+              <h5 class="card-title fs-4">Title:
+                  <span id="book-Title" class="fst-italic">${book.title}</span></h5>
+              <p class="card-text fs-5">Price:
+                  <span id="book-Price" class="fst-italic">${book.price}</span> €</p>
+              <a href="#" class="btn btn-primary">Delete</a>
+            </div>
+          </div>
+        </div>
+        `
       })
     })
     .catch(function (err) {
@@ -37,8 +37,3 @@ const getBookInfo = function () {
 getBookInfo()
 
 const deleteButton = document.getElementById(`delete-Button`)
-const bookCard = document.getElementById(`book-Card`)
-
-deleteButton.addEventListener(`click`, function () {
-  this.parentNode.remove()
-})

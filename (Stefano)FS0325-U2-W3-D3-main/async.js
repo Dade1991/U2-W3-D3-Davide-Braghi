@@ -6,7 +6,7 @@
 const creaCards = function () {
   // questa è una simulazione di una funzione che è in grado di
   // generare delle cards a partire da un array di oggetti
-  console.log('Adesso genero le cards per la pagina')
+  console.log("Adesso genero le cards per la pagina")
 }
 
 // quando devo invocare creaCards? eh, quando ho ottenuto l'array dei dati...

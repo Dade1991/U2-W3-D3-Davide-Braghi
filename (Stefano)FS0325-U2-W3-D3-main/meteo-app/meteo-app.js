@@ -6,7 +6,7 @@ const getBobbioWeather = function () {
   )
     .then((response) => {
       console.log("RESPONSE", response)
-      if (rseponse.ok) {
+      if (response.ok) {
         // la risposta dal server è ok, estrapoliamo il JSON
         return response.json()
       } else {
